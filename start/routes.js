@@ -17,5 +17,10 @@
 const Route = use('Route')
 
 Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
+  return { greeting: 'Empezamos con adonis' }
+})
+
+//Creando ruta Usuarios
+Route.post('usuarios/registro', ({request})=> {
+  return{ mensaje:'Hola dey, ya registraste un Usuario'}
 })
