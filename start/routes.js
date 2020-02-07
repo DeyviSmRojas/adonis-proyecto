@@ -16,5 +16,5 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-//Creando ruta Usuarios con el controlador store
+//Creando ruta Usuarios con el controlador User y la funcion store
 Route.post('usuarios/registro', 'UserController.store');

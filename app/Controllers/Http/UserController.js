@@ -1,12 +1,13 @@
 'use strict'
 
 class UserController {
-    store(){
-        return {
-            mensaje:'Creamos un usuario desde el controlador'
-        };
+    store({request}){
+        const {username, email, password} = request.all();
+        const user = User.create({
+            username, email, password
+        });
+       
     };
-
 }
 
 module.exports = UserController
