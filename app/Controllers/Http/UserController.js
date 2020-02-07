@@ -1,4 +1,6 @@
 'use strict'
+//Exportar el modelo USer desde el controlador 
+const User = use('App/Models/User')
 
 class UserController {
     store({request}){
@@ -6,7 +8,7 @@ class UserController {
         const user = User.create({
             username, email, password
         });
-       
+       return user;
     };
 }
 
