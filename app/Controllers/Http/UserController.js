@@ -17,7 +17,7 @@ class UserController {
         const user = await User.create({
             username, email, password
         });
-       return user;
+       return this.login(...arguments);
     };
 }
 
