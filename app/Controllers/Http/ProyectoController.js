@@ -3,7 +3,7 @@
 
 // getuser-> nos devuelve el usuario logeado haceidno el uso del method check
 class ProyectoController {
-    index({auth}){
+    async index({auth}){
         const user = await auth.getUser();
         console.log(user);
         return {
