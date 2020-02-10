@@ -19,3 +19,4 @@ const Route = use('Route')
 //Creando ruta Usuarios con el controlador User y la funcion store
 Route.post('usuarios/registro', 'UserController.store');
 Route.post('usuarios/login', 'UserController.login');
+Route.get('proyecos', 'ProyectoController.index');
