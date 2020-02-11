@@ -19,4 +19,5 @@ const Route = use('Route')
 //Creando ruta Usuarios con el controlador User y la funcion store
 Route.post('usuarios/registro', 'UserController.store');
 Route.post('usuarios/login', 'UserController.login');
-Route.get('proyectos', 'ProyectoController.index');
+Route.get('proyectos', 'ProyectoController.index').middleware('auth');
+Route.post('proyectos', 'ProyectoController.create').middleware('auth');
