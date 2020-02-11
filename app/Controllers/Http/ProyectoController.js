@@ -11,12 +11,20 @@ class ProyectoController {
     async create({auth, request}) {
         const user = await auth.getUser();
         const {nombre} = request.all();
-        const project = new project();
-        project.fill({
+        const proyecto = new Proyecto();
+        proyecto.fill({
             nombre
         });
-        await user.proyectos.save(project);
-        return project;
+        await user.proyectos().save(proyecto);
+        return proyecto;
+    }
+
+    async destroy({auth, request, params}){
+        const user = await auth.getUser();
+        const {id} = params;
+        const proyecto = await Proyecto.find(id);
+        await proyecto.delete();
+        return proyecto;
     }
 }
 
