@@ -23,6 +23,11 @@ class ProyectoController {
         const user = await auth.getUser();
         const {id} = params;
         const proyecto = await Proyecto.find(id);
+        if (proyecto.user_id !== user.id) {
+            return response.status(403).json({
+                mensaje: "Usted no es dueño de este pryecto, por ello no puedes eliminarlo"
+            });
+        }
         await proyecto.delete();
         return proyecto;
     }
